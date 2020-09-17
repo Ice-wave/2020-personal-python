@@ -40,4 +40,25 @@
 - 如果使用具有不同优先级的运算符，只在具有最低优先等级的运算符周围两边添加空格，其他的就不用加了。
 
 ## 其他规则：
-- 使用制表符作为缩进方式。
+
+## 异常使用:
+- 异常类应派生自Exception而不是BaseException
+- 抛出异常时，用raise ValueError('message')代替raise ValueError, 'message'
+- 尽量减少try/except块中的代码量
+- 使用finally子句来执行那些无论try块中有没有异常都应该被执行的代码
+- 捕获异常时，尽可能使用明确的异常，而不是用一个空的Except
+
+
+## 条件表达式:
+- 适用于单行函数. 在其他情况下，推荐使用完整的if语句.
+- if条件判断
+        1.避免将一个布尔值与True/Fasle 做等值判断，如果你需要区分false和None, 你应该用像 if not x and x is not None: 这样的语句.
+
+        2.避免与None做== 判断，应该采用is/is not
+
+        3.使用is not操作符而不是not ... is， 前面可读性更好
+
+        4.对于序列(字符串, 列表, 元组), 要注意空序列是false. 因此 if not seq: 或者 if seq: 比 if len(seq): 或 if not len(seq): 要更好.
+
+        5.注意‘0’(字符串)会被当做True.
+
