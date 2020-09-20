@@ -36,7 +36,7 @@ if __name__ == '__main__':
     else:
         with open('data.json',encoding='utf-8') as f:
             for line in f:
-                data.extend(json.loads(line))
+                data.append(json.loads(line))
     for i in range(0,len(opt)):
         if '--user' == opt[i][0] or '-u' == opt[i][0]:
             username=opt[i][1]
